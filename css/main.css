@@ -1,0 +1,125 @@
+
+body{
+	height: 1000px;
+}
+
+.navButton{
+	position: relative;
+	z-index: 40;
+}
+
+.navigation{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	z-index: 30;
+	list-style: none;
+
+}
+
+.navigation-open::before , .navigation-open::after{
+	content: '';
+	position: absolute;
+	top: 0;
+	display: block;
+	width: 0%;
+	height: 100%;
+	background: rgba(77, 214, 77, 0.8);
+	z-index: 10;
+	animation: navOpen .5s cubic-bezier(0.63, 0.29, 0, 1) .5s forwards;
+}
+
+.navigation-open::before{
+	left: 0;
+}
+
+.navigation-open::after{
+	right: 0;
+}
+
+
+@keyframes navOpen{
+	0%{
+		width: 0;
+	}
+	100%{
+		width: 50%;
+	}
+}
+.navigation-item{
+	z-index: 40;
+	padding: 1.25rem 0;
+}
+
+.navigation-link{
+	display: inline-block;
+	color: #fff;
+	font-size: 3rem;
+	padding: 0 4.375rem;
+	position: relative;
+	-webkit-transform: scale(0);
+		transform: scale(0);
+}
+
+
+.navigation-open  .navigation-link{
+	animation: linksHide .5s linear 1s forwards;
+}
+
+@keyframes linksHide{
+	0%{
+		
+		transform: scale(0);
+	}
+	100%{
+		
+		transform: scale(1);
+	}
+}
+
+.hideScroll{
+	overflow: hidden;
+}
+.menu-close::before , .menu-close::after{
+	width: 50%;
+}
+.menu-close::before{
+	animation: close .5s ease-in-out 1s forwards ;
+}
+
+.menu-close::after{
+	animation: close .5s linear 1s forwards ;
+}
+
+@keyframes close {
+	0%{
+		width: 50%;
+	}
+
+	100%{
+		width: 0%;
+	}
+}
+
+.menu-close  .navigation-link{
+	animation: closeLinks .5s linear .5s forwards;
+	transform: scale(1);
+}
+
+@keyframes closeLinks {
+	0%{
+		transform: scale(1);
+	}
+	100%{
+		transform: scale(0);
+	}
+}
