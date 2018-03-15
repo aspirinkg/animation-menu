@@ -1,4 +1,4 @@
- //велосипед какой то , но работает
+
  $(document).ready(function(){
 	$('#toggleNavigation').on('click',(e)=>{
 		e.preventDefault();
@@ -7,7 +7,7 @@
 		$('body').addClass('hideScroll');
 		$('html').addClass('hideScroll');
 
-		// лень переписывать)
+		
 		let boolClass = $('.navigation').attr('class') == 'navigation navigation-open' ? true : false;
 
 		if(boolClass){
