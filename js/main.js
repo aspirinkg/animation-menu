@@ -21,7 +21,7 @@
 				$('.navigation').removeClass('menu-close');
 				$('body').removeClass('hideScroll');
 				$('html').removeClass('hideScroll');
-
+				vxcbcvbcvbcvbbcvbcvbcvbcvbcvbcvbcbcvbcvbcvbcvnbn;
 			  }, 1500);
 
 		}
